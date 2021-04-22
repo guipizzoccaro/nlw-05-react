@@ -13,6 +13,7 @@ export default function Home(props) {
       <h1>Index</h1>
       <p>{JSON.stringify(props.episodes)}</p>
     </div>
+
   )
 }
 
