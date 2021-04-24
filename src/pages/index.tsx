@@ -95,8 +95,9 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
 
                   </td>
                   <td>
-                    <Link href={`/episodes/${episode.id}`}> </Link>
-                    <a>{episode.title}</a>
+                    <Link href={`/episodes/${episode.id}`}>
+                      {episode.title}
+                    </Link>
                   </td>
                   <td>{episode.members}</td>
                   <td style={{ width: 100 }}>{episode.publishedAt}</td>
@@ -139,7 +140,6 @@ export const getStaticProps: GetStaticProps = async () => {
       publishedAt: format(parseISO(episode.published_at), 'd MMM yy', { locale: ptBR }),
       duration: Number(episode.file.duration),
       durationAsString: convertDurationToTimeString(Number(episode.file.duration)),
-      description: episode.description,
       url: episode.file.url,
 
     }
